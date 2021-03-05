@@ -73,4 +73,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # For docker
+  if File.exists?("/.dockerenv")
+    config.logger = ActiveSupport::Logger.new('/proc/1/fd/1')
+  end
 end
