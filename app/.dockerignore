@@ -1,0 +1,12 @@
+/.bundle/
+/.dockerignore
+/.git/
+/.git*
+/.ruby-version
+/README.md
+/config/master.key
+/log/
+/node_modules/
+/storage/
+/tmp/
+/vendor/bundle/
