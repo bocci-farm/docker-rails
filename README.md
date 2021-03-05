@@ -51,7 +51,7 @@ EXPOSE 3000
 CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
 ```
 
-### 3. .dockerignoreの用意
+## 3. .dockerignoreの用意
 
 不要なファイルをイメージに含めないために.dockerignoreを作成します
 
