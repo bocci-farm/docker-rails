@@ -78,4 +78,6 @@ Rails.application.configure do
   if File.exists?("/.dockerenv")
     config.logger = ActiveSupport::Logger.new('/proc/1/fd/1')
   end
+  config.hosts << /^.+\.amazonaws\.com$/
+  config.web_console.allowed_ips = ['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16']
 end

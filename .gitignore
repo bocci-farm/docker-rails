@@ -1,3 +1,4 @@
 .*.swp
 .env
 .envrc
+docker-compose.ecr.yml
