@@ -6,9 +6,15 @@ WORKDIR /app
 RUN \
   --mount=type=cache,target=/var/cache/apk \
   apk add -U \
+    bash \
     build-base \
+    curl \
     git \
+    mariadb-client \
+    mariadb-connector-c-dev \
     nodejs \
+    python3 \
+    redis \
     sqlite-dev \
     tzdata \
     yarn \
@@ -37,4 +43,5 @@ COPY --from=bundle /usr/local/bundle/ /usr/local/bundle/
 COPY --from=node_modules /app/node_modules/ /app/node_modules/
 COPY . /app/
 EXPOSE 3000
+ENTRYPOINT ["/app/bin/docker-entrypoint.sh"]
 CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
